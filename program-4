@@ -1,0 +1,71 @@
+PROGRAM-4
+Write a program to show the effect of default arguments can be alternatively achieved by overloading.
+
+Code :-
+
+#include <iostream>
+using namespace std;
+
+class function 
+{
+ private :
+            double result =1;
+            
+  public : 
+            void display(double a)
+{
+                
+            cout<<"\nCalculated Value is : "<<a;
+            }
+            void power(double base, int power)
+            {
+                
+                result=1;
+                for(int i=1; i<=power; i++)
+                {
+                    result = result * base;
+                }
+                cout<<"This is double power function \n";
+                display(result);
+            }
+            void power(double base)
+            {
+                 int power=2;
+                //double result=1;
+                result=1;
+                for(int i=1;i<=power;i++){
+                 result = result * base;
+}
+            display(result);
+            }
+};
+
+int main()
+{
+     int choice ;
+    double base ;
+    int power;
+    function pwr;
+   
+    cout<<"Enter the Choice : \n";
+    cout<<"1.Calculate the value with power\n2.Calculate the value without power\n";
+    cin>>choice;
+   
+    switch(choice)
+{
+        case 1 :
+                cout<<"Enter the Base value and Power value : ";
+                cin>>base>>power;
+                pwr.power(base,power);
+                break;
+        case 2 :
+                cout<<"Enter the Base value : ";
+                cin>>base;
+                pwr.power(base);
+                break;
+        default :
+                exit(0);
+    }
+
+    return 0;
+}
