@@ -1,0 +1,56 @@
+/* Program :-Write a program to create an abstract class named shape that contains an empty method number of sides(). Provide three classes named Trapezoid, Triangle and hexagon such that each one of the classes inherit the class shape . Each one of the classes contains only the method number of sides() that shows the number of sides in the given geometrical figures. *\
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+/* Abstract class */
+class Shape{
+  public:
+  virtual void numberOfSides() = 0;
+};
+
+class Triangle: public Shape{
+  public:
+  void numberOfSides(){
+    cout<<"In triangle there are 3 Sides."<< endl<<endl;
+  }
+};
+
+class Trapezoid: public Shape{
+  public:
+  void numberOfSides(){
+    cout<<"In Trapezoid there are 4 Sides."<< endl<<endl;
+  }
+};
+
+class Hexagon: public Shape{
+  public:
+  void numberOfSides(){
+    cout<<"In Hexagon there are 6 Sides."<< endl<<endl;
+  }
+};
+
+int main(){
+  /* One pointer to access more derived class */
+  Shape *ptr = new Triangle();
+  ptr->numberOfSides();
+
+  ptr = new Trapezoid();
+  ptr->numberOfSides();
+
+  ptr = new Hexagon();
+  ptr->numberOfSides();
+
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
